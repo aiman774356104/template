@@ -18,8 +18,11 @@
         "react"
     ],
     "rules": {
+        "import/prefer-default-export": 0,
+        "no-param-reassign": 0,
         "semi": ["error", "always"],
         "quotes": ["error", "single"],
+        // "react/prop-types": 0,
         "no-console": 1
         // "camelcase": 0,
         // "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
