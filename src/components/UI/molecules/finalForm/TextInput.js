@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
-import  composeValidators  from 'components/global/atomsForm/validations/composeValidators';
+import  composeValidators  from 'components/UI/molecules/finalForm/validations/composeValidators';
 
 const TextInput = ({ name, validate, onBlur, ...props }) => (
   <Field
