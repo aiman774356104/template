@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'react-final-form';
-import { required ,number} from 'components/global/atomsForm/validations/FormValidations';
-import { TextInput } from 'components/global/atomsForm';
+import { required ,number} from 'components/UI/molecules/finalForm/validations/FormValidations';
+import { TextInput } from 'components/UI/molecules/finalForm';
 
 const Login = () => {
   const onSubmit = (v) => console.log('v :>> ', v);
