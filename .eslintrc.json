@@ -22,8 +22,9 @@
         "no-param-reassign": 0,
         "semi": ["error", "always"],
         "quotes": ["error", "single"],
-        // "react/prop-types": 0,
+        // "parser": "babel-eslint",
         "no-console": 1
+        // "react/prop-types": 0,
         // "camelcase": 0,
         // "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
         // "import/no-named-as-default": 1,

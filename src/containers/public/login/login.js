@@ -19,6 +19,7 @@ const Login = () => {
                 validate={[required,number]}
                 placeholder="First Name"
               />
+              <br />
             </div>
             <div>
               <TextInput
