@@ -2,12 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Nav = ({ listNav }) => (
+const Nav = ({ listNav, className, colorLink, style }) => (
   <React.Fragment>
-    <ul>
+    <ul
+      style={{ listStyleType: 'none', ...style }}
+      className={className}
+    >
       {listNav.map((e, i) => (
         <li key={i}>
-          <Link to={e.to}>{e.title}</Link>
+          <Link style={{ color: colorLink, textDecoration: 'none' }} to={e.to}>
+            {e.title}
+          </Link>
         </li>
       ))}
     </ul>
@@ -16,5 +21,8 @@ const Nav = ({ listNav }) => (
 
 Nav.propTypes = {
   listNav: PropTypes.arrayOf(PropTypes.shape()),
+  className: PropTypes.string,
+  colorLink: PropTypes.string,
+  style: PropTypes.shape(),
 };
 export default Nav;
