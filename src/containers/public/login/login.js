@@ -1,7 +1,7 @@
 import React from 'react';
-import { Form } from 'react-final-form';
-import { required ,number} from 'components/UI/molecules/finalForm/validations/FormValidations';
-import { TextInput } from 'components/UI/molecules/finalForm';
+import { TextInput, Form } from 'components/UI/molecules/finalForm';
+import { required, number } from 'components/validations/FormValidations';
+import { Button } from 'components/UI/atoms';
 
 const Login = () => {
   const onSubmit = (v) => console.log('v :>> ', v);
@@ -13,25 +13,31 @@ const Login = () => {
         render={({ handleSubmit, pristine }) => (
           <form onSubmit={handleSubmit}>
             <h2>Login</h2>
-            <div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                maxWidth: 'fit-content',
+                gap: 25,
+              }}
+            >
               <TextInput
                 name="userName"
-                validate={[required,number]}
+                validate={[required, number]}
                 placeholder="First Name"
               />
-              <br />
-            </div>
-            <div>
+
               <TextInput
                 name="password"
-                type='password'
+                type="password"
                 validate={[required]}
                 placeholder="password"
               />
             </div>
-            <button disabled={pristine} type="submit">
+            <br />
+            <Button disabled={pristine} type="submit" variant="contained">
               Submit
-            </button>
+            </Button>
           </form>
         )}
       />

@@ -1,4 +1,4 @@
-import Input from './Input/Input';
+import Button from '@mui/material/Button';
+import Input from './Input';
 
-
-export { Input };
+export { Input, Button };

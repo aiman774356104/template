@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
-import composeValidators from 'components/UI/molecules/finalForm/validations/composeValidators';
+import composeValidators from 'components/validations/composeValidators';
 import { Input } from 'components/UI/atoms';
 
 const TextInput = ({ name, validate, onBlur, ...props }) => (
@@ -9,16 +9,14 @@ const TextInput = ({ name, validate, onBlur, ...props }) => (
     name={name}
     validate={composeValidators(...validate)}
     render={({ input, meta }) => (
-      <div>
-        <Input
-          id={name}
-          {...input}
-          {...props}
-          onBlur={onBlur}
-          error={meta.touched && meta.error}
-          helperText={meta.error}
-        />
-      </div>
+      <Input
+        id={name}
+        {...input}
+        {...props}
+        onBlur={onBlur}
+        error={meta.touched && meta.error}
+        helperText={meta.error}
+      />
     )}
   />
 );
