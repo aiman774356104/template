@@ -11,7 +11,7 @@ const Login = () => {
         onSubmit={onSubmit}
         initialValues={{}}
         render={({ handleSubmit, pristine }) => (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} style={{padding: 20}}>
             <h2>Login</h2>
             <div
               style={{

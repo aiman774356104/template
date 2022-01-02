@@ -1,5 +1,4 @@
 import React from 'react';
-// import RootRouter from 'routes/rootRouter';
 
 const Home = () => (
   <React.Fragment>
