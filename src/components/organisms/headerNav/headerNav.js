@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from 'components/UI/molecules/page/nav';
+import Nav from 'designSystems/molecules/nav';
 import styles from './headerNav.module.css';
 
 const headerNav = ({ colorLink, style, listNav }) => {

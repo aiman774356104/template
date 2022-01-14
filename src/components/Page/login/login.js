@@ -1,7 +1,9 @@
 import React from 'react';
-import { TextInput, Form } from 'components/UI/molecules/finalForm';
+
+import { Button } from 'designSystems/atoms';
+import { Form } from 'react-final-form';
 import { required, number } from 'components/validations/FormValidations';
-import { Button } from 'components/UI/atoms';
+import TextInput from 'components/organisms/TextInput';
 
 const Login = () => {
   const onSubmit = (v) => console.log('v :>> ', v);
@@ -11,7 +13,7 @@ const Login = () => {
         onSubmit={onSubmit}
         initialValues={{}}
         render={({ handleSubmit, pristine }) => (
-          <form onSubmit={handleSubmit} style={{padding: 20}}>
+          <form onSubmit={handleSubmit} style={{ padding: 20 }}>
             <h2>Login</h2>
             <div
               style={{
@@ -22,12 +24,14 @@ const Login = () => {
               }}
             >
               <TextInput
+                finalForm
                 name="userName"
                 validate={[required, number]}
                 placeholder="First Name"
               />
 
               <TextInput
+                finalForm
                 name="password"
                 type="password"
                 validate={[required]}
@@ -35,9 +39,7 @@ const Login = () => {
               />
             </div>
             <br />
-            <Button disabled={pristine} type="submit" variant="contained">
-              Submit
-            </Button>
+            <Button label="submit" disabled={pristine} type="submit" primary />
           </form>
         )}
       />

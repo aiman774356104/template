@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
 
-import Login from 'containers/public/login';
-import Home from 'containers/public/home';
-import { HeaderMain, DrawerHeader, HeaderAppBar } from 'components/UI/atoms';
-import HeaderNav from 'components/templates/headerNav';
+import Header from 'components/organisms/mastr/Header';
+import Drawer from 'components/organisms/mastr/Drawer';
+import Body from 'components/organisms/mastr/Body';
+import Login from 'components/Page/login';
+import Home from 'components/Page/home';
 
 const RootRouter = () => {
   const [openDrawer, setOpenDrawer] = useState(
@@ -18,6 +17,7 @@ const RootRouter = () => {
     { to: 'login', title: 'Login' },
     { to: '/dashboard', title: 'Dashboard' },
   ];
+
   const DrawerlocalStorage = (value) => {
     localStorage.setItem('open_drawer', value);
     setOpenDrawer(value);
@@ -25,42 +25,19 @@ const RootRouter = () => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <HeaderAppBar position="fixed" open={openDrawer}>
-        <Toolbar>
-          {!openDrawer && <p onClick={() => DrawerlocalStorage(true)}>Open</p>}
-          <HeaderNav
-            colorLink="#FFF"
-            style={{ display: 'flex', gap: 10 }}
-            listNav={minNav}
-          />
-        </Toolbar>
-      </HeaderAppBar>
-      <Drawer
-        sx={{
-          width: 240,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: 240,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant="persistent"
-        anchor="left"
+      <Header
         open={openDrawer}
-      >
-        <DrawerHeader>
-          <p onClick={() => DrawerlocalStorage(false)}>Close</p>
-        </DrawerHeader>
-      </Drawer>
-
-      <HeaderMain open={openDrawer}>
-        <DrawerHeader />
+        onClick={() => DrawerlocalStorage(true)}
+        listNav={minNav}
+      />
+      <Drawer open={openDrawer} onClick={() => DrawerlocalStorage(false)} />
+      <Body open={openDrawer}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Redirect to="/" />
         </Switch>
-      </HeaderMain>
+      </Body>
     </Box>
   );
 };

@@ -5,6 +5,7 @@ import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import CardContent from '@mui/material/CardContent';
 import { red } from '@mui/material/colors';
+import { ReactComponent as EyeIcon } from 'designSystems/atoms/icon/eye.svg';
 
 const Card = ({ src, name, birthDate, icon, onClick, children }) => {
   return (
@@ -18,9 +19,12 @@ const Card = ({ src, name, birthDate, icon, onClick, children }) => {
         }
         action={
           icon && (
-            <p onClick={onClick} style={{ margin: '5px 0 0 25px' }}>
-              icon
-            </p>
+            <div style={{ cursor: 'pointer', margin: '5px 0 0 10px' }}>
+              <EyeIcon
+                onClick={onClick}
+                style={{ fill: '#a4b3c3', width: 20, height: 20 }}
+              />
+            </div>
           )
         }
         title={name}
