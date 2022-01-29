@@ -34,6 +34,11 @@ const Modal = ({ open, onClose, children }) => {
     </ModalMui>
   );
 };
+
+Modal.defaultProps = {
+  open: false,
+};
+
 Modal.propTypes = {
   open: PropTypes.bool,
   onClose: PropTypes.func,

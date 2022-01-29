@@ -30,7 +30,7 @@ const LestCard = ({ data }) => {
   );
 };
 LestCard.propTypes = {
-  data: PropTypes.shape,
+  data: PropTypes.arrayOf(PropTypes.shape),
 };
 
 export default LestCard;

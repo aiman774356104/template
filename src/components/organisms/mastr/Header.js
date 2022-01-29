@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Toolbar from '@mui/material/Toolbar';
-import { HeaderAppBar } from 'designSystems/molecules';
+import { HeaderAppBar,HeaderNav } from 'designSystems/molecules';
 import { ReactComponent as MenuIcon } from 'designSystems/atoms/icon/menu.svg';
-import HeaderNav from 'components/organisms/headerNav';
 
 const Header = ({ open, listNav, onClick }) => {
   return (
@@ -27,7 +26,7 @@ const Header = ({ open, listNav, onClick }) => {
 
 Header.propTypes = {
   open: PropTypes.bool,
-  listNav: PropTypes.shape,
+  listNav: PropTypes.arrayOf(PropTypes.shape),
   onClick: PropTypes.func,
 };
 

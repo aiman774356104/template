@@ -29,7 +29,7 @@ TextInput.propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
   type: PropTypes.string,
-  validate: PropTypes.func,
+  validate: PropTypes.array,
   onBlur: PropTypes.func,
 };
 

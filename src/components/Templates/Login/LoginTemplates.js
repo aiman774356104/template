@@ -1,12 +1,11 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { Button } from 'designSystems/atoms';
 import { Form } from 'react-final-form';
 import { required, number } from 'components/validations/FormValidations';
 import TextInput from 'components/organisms/TextInput';
 
-const Login = () => {
-  const onSubmit = (v) => console.log('v :>> ', v);
+const LoginTemplates = ({ onSubmit }) => {
   return (
     <React.Fragment>
       <Form
@@ -47,4 +46,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+LoginTemplates.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
+
+export default LoginTemplates;
