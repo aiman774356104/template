@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DrawerMUI from '@mui/material/Drawer';
-import { DrawerHeader } from 'designSystems/molecules';
-import { ReactComponent as CloseIcon } from 'designSystems/atoms/icon/x-close.svg';
+import { DrawerHeader } from 'components/molecules';
+import { ReactComponent as CloseIcon } from 'components/atoms/icon/x-close.svg';
 
 const style = {
   width: 240,

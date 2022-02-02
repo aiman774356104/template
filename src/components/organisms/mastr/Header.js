@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Toolbar from '@mui/material/Toolbar';
-import { HeaderAppBar,HeaderNav } from 'designSystems/molecules';
-import { ReactComponent as MenuIcon } from 'designSystems/atoms/icon/menu.svg';
+import { HeaderAppBar,HeaderNav } from 'components/molecules';
+import { ReactComponent as MenuIcon } from 'components/atoms/icon/menu.svg';
 
 const Header = ({ open, listNav, onClick }) => {
   return (

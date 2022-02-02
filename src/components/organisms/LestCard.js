@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Card, Modal } from 'designSystems/molecules';
+import { Card, Modal } from 'components/molecules';
 
 const LestCard = ({ data }) => {
   const [open, setOpen] = React.useState();

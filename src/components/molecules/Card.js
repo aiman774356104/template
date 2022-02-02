@@ -5,7 +5,7 @@ import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import CardContent from '@mui/material/CardContent';
 import { red } from '@mui/material/colors';
-import { ReactComponent as EyeIcon } from 'designSystems/atoms/icon/eye.svg';
+import { ReactComponent as EyeIcon } from 'components/atoms/icon/eye.svg';
 
 const Card = ({ src, name, birthDate, icon, onClick, children }) => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HeaderMain, DrawerHeader } from 'designSystems/molecules';
+import { HeaderMain, DrawerHeader } from 'components/molecules';
 
 const Body = ({ open, children }) => {
   return (

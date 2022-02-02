@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'designSystems/atoms';
+import { Button } from 'components/atoms';
 import { Form } from 'react-final-form';
 import { required, number } from 'components/validations/FormValidations';
 import TextInput from 'components/organisms/TextInput';

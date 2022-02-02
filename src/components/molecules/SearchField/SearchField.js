@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { Button, Input } from 'designSystems/atoms';
+import { Button, Input } from 'components/atoms';
 
 const SearchField = () => {
   return (
