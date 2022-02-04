@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 
-const headerNav = ({ colorLink, style, listNav }) => {
+const headerNav = ({ colorLink, listNav }) => {
   return (
     <div className={styles.flex}>
-      <ul style={{ listStyleType: 'none', ...style }}>
+      <ul style={{ listStyleType: 'none' }}>
         {listNav.map((e, i) => (
           <li key={i}>
             <Link

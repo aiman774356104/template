@@ -4,7 +4,6 @@ import CardUi from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import CardContent from '@mui/material/CardContent';
-import { red } from '@mui/material/colors';
 import { ReactComponent as EyeIcon } from 'components/atoms/icon/eye.svg';
 
 const Card = ({ src, name, birthDate, icon, onClick, children }) => {
@@ -12,10 +11,7 @@ const Card = ({ src, name, birthDate, icon, onClick, children }) => {
     <CardUi sx={{ maxWidth: 345 }} variant="outlined">
       <CardHeader
         avatar={
-          // <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {src}
-          </Avatar>
+          <Avatar alt="Remy Sharp" src={src} />
         }
         action={
           icon && (

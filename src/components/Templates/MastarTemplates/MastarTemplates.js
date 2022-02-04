@@ -7,7 +7,7 @@ import Header from 'components/organisms/mastr/Header';
 import Drawer from 'components/organisms/mastr/Drawer';
 import Body from 'components/organisms/mastr/Body';
 
-const MastarTemplates = ({ minNav, children }) => {
+const MastarTemplates = ({ children }) => {
   const [openDrawer, setOpenDrawer] = useState(
     JSON.parse(localStorage.getItem('open_drawer'))
   );
@@ -21,7 +21,6 @@ const MastarTemplates = ({ minNav, children }) => {
       <Header
         open={openDrawer}
         onClick={() => DrawerlocalStorage(true)}
-        listNav={minNav}
       />
       <Drawer open={openDrawer} onClick={() => DrawerlocalStorage(false)} />
       <Body open={openDrawer}>

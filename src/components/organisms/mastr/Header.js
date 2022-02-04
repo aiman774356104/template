@@ -1,25 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Toolbar from '@mui/material/Toolbar';
-import { HeaderAppBar,HeaderNav } from 'components/molecules';
+import { Toolbar, Avatar, Box } from '@mui/material';
+import { HeaderAppBar } from 'components/molecules';
 import { ReactComponent as MenuIcon } from 'components/atoms/icon/menu.svg';
 
-const Header = ({ open, listNav, onClick }) => {
+const Header = ({ open, onClick }) => {
   return (
     <HeaderAppBar position="fixed" open={open}>
-      <Toolbar>
-        {!open && (
-          <MenuIcon
-            style={{ cursor: 'pointer', width: 24, height: 24 }}
-            onClick={onClick}
-          />
-        )}
-        <HeaderNav
-          colorLink="#FFF"
-          style={{ display: 'flex', gap: 10 }}
-          listNav={listNav}
-        />
-      </Toolbar>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Toolbar>
+          {!open && (
+            <MenuIcon
+              style={{ cursor: 'pointer', width: 24, height: 24 }}
+              onClick={onClick}
+            />
+          )}
+        </Toolbar>
+        <h3>welcome</h3>
+        <Avatar sx={{ mr: '24px' }} aria-label="recipe">
+          A
+        </Avatar>
+      </Box>
     </HeaderAppBar>
   );
 };

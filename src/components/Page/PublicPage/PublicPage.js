@@ -6,14 +6,9 @@ import Login from 'components/Page/Login';
 import Home from 'components/Page/home';
 
 const PublicPage = () => {
-  const minNav = [
-    { to: '/', title: 'Home' },
-    { to: 'login', title: 'Login' },
-    { to: '/dashboard', title: 'Dashboard' },
-  ];
 
   return (
-    <MastarTemplates minNav={minNav}>
+    <MastarTemplates >
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Redirect to="/" />
@@ -22,7 +17,6 @@ const PublicPage = () => {
 };
 
 PublicPage.propTypes = {
-  minNav: PropTypes.arrayOf(PropTypes.shape),
   children: PropTypes.node,
 };
 
