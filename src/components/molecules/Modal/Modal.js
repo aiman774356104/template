@@ -15,11 +15,12 @@ const Modal = ({ open, onClose, children }) => {
     bgcolor: 'background.paper',
     // border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
+    p: 2,
   };
 
   return (
     <ModalMui
+      disableAutoFocus
       aria-labelledby="spring-modal-title"
       aria-describedby="spring-modal-description"
       open={open}

@@ -5,17 +5,21 @@ import { Card, Modal } from 'components/molecules';
 
 const LestCard = ({ data }) => {
   const [open, setOpen] = React.useState();
+  const [state, setState] = React.useState({});
   return (
     <div>
       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-        {data.map((e, i) => (
+        {data?.map((e, i) => (
           <Card
             icon
             key={i}
-            name={e.name}
-            src={e.src}
-            birthDate={e.birthDate}
-            onClick={() => setOpen({ open: true, text: e.name })}
+            name={e?.name}
+            src={e?.image}
+            birthDate={e?.created}
+            onClick={() => {
+              setState(e);
+              setOpen({ open: true });
+            }}
           >
             <div>
               <p>{e.name}</p>
@@ -24,7 +28,17 @@ const LestCard = ({ data }) => {
         ))}
       </div>
       <Modal open={open?.open} onClose={() => setOpen(false)}>
-        <p>{open?.text}</p>
+        <div style={{ display: 'flex', gap: 10 }}>
+          <img
+            src={state?.image}
+            alt={state?.name}
+            style={{ width: 200, height: 225 }}
+          />
+          <div>
+          <p>Name: {state?.name}</p>
+          <p>Species: {state?.species}</p>
+          </div>
+        </div>
       </Modal>
     </div>
   );
