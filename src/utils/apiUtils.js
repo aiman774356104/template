@@ -1,26 +1,19 @@
-
 import axios from 'axios';
 
-// const instance = axios.create({
-// //   baseURL: `${process.env.REACT_APP_PM_API}/api`,
-// });
-
-function performanceAPI(url, params, method, data = null) {
+function ApiUtils(url, params, method = 'GET', data = null) {
   const headers = {
     'Content-Type': 'application/json',
     Accept: 'application/json',
   };
 
   return axios({
+    baseURL: 'https://rickandmortyapi.com/api/',
     method,
     url,
     params,
-    // paramsSerializer: paramObject => Qs.stringify(paramObject, serializerConfig),
     data,
     headers,
   });
 }
 
-export {
-  performanceAPI,
-};
+export { ApiUtils };

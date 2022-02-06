@@ -5,7 +5,7 @@ import { Form } from 'react-final-form';
 import { required } from 'components/validations/FormValidations';
 import TextInput from 'components/organisms/TextInput';
 
-const LoginTemplates = ({ onSubmit }) => {
+const SignupTemplates = ({ onSubmit }) => {
   return (
     <React.Fragment>
       <Form
@@ -13,7 +13,7 @@ const LoginTemplates = ({ onSubmit }) => {
         initialValues={{}}
         render={({ handleSubmit, pristine }) => (
           <form onSubmit={handleSubmit} style={{ padding: 20 }}>
-            <h2>Login</h2>
+            <h2>Signup</h2>
             <div
               style={{
                 display: 'flex',
@@ -27,7 +27,7 @@ const LoginTemplates = ({ onSubmit }) => {
                 name="email"
                 type="email"
                 validate={[required]}
-                placeholder="First Name"
+                placeholder="E-mail"
               />
 
               <TextInput
@@ -36,6 +36,14 @@ const LoginTemplates = ({ onSubmit }) => {
                 type="password"
                 validate={[required]}
                 placeholder="password"
+              />
+
+              <TextInput
+                finalForm
+                name="password_confirm"
+                type="password"
+                validate={[required]}
+                placeholder="Password Confirm"
               />
             </div>
             <br />
@@ -47,8 +55,8 @@ const LoginTemplates = ({ onSubmit }) => {
   );
 };
 
-LoginTemplates.propTypes = {
+SignupTemplates.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default LoginTemplates;
+export default SignupTemplates;

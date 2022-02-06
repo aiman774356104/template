@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Switch, withRouter } from 'react-router-dom';
 import Box from '@mui/material/Box';
 
 import Header from 'components/organisms/mastr/Header';
@@ -18,14 +17,9 @@ const MastarTemplates = ({ children }) => {
   };
   return (
     <Box sx={{ display: 'flex' }}>
-      <Header
-        open={openDrawer}
-        onClick={() => DrawerlocalStorage(true)}
-      />
+      <Header open={openDrawer} onClick={() => DrawerlocalStorage(true)} />
       <Drawer open={openDrawer} onClick={() => DrawerlocalStorage(false)} />
-      <Body open={openDrawer}>
-        <Switch>{children}</Switch>
-      </Body>
+      <Body open={openDrawer}>{children}</Body>
     </Box>
   );
 };
@@ -35,4 +29,4 @@ MastarTemplates.propTypes = {
   children: PropTypes.node,
 };
 
-export default withRouter(MastarTemplates);
+export default MastarTemplates;

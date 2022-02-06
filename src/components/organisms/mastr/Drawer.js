@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import DrawerMUI from '@mui/material/Drawer';
 import { Box, Avatar } from '@mui/material';
-import { DrawerHeader } from 'components/molecules';
 import { ReactComponent as CloseIcon } from 'components/atoms/icon/x-close.svg';
 import { ReactComponent as HouseIcon } from 'components/atoms/icon/house.svg';
 import { ReactComponent as SettingsIcon } from 'components/atoms/icon/settings.svg';
@@ -82,6 +80,20 @@ const Drawer = ({ onClick, open }) => {
           </Link>
 
           <Link style={{ color: '#fff', textDecoration: 'none' }} to="login">
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <AboutIcon style={{ width: 24, height: 24 }} />
+              login
+            </Box>
+          </Link>
+
+          <Link style={{ color: '#fff', textDecoration: 'none' }} to="signup">
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <AboutIcon style={{ width: 24, height: 24 }} />
+              Signup
+            </Box>
+          </Link>
+
+          <Link style={{ color: '#fff', textDecoration: 'none' }} to="/">
             <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <AboutIcon style={{ width: 24, height: 24 }} />
               About
