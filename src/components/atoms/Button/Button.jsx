@@ -1,43 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion/dist/framer-motion';
 import './button.css';
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ primary, size, label, ...props }) => {
+  const buttonVariants = {
+    hover: {
+      scale: 1.1,
+      boxShadow: '0 0 5px 2px #bdbdbd',
+      transition: { duration: 0.5 },
+    },
+  };
+  const mode = primary ? 'button--primary' : 'button--secondary';
   return (
-    <button
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
+    <motion.button
+      whileHover="hover"
+      variants={buttonVariants}
+      className={['button', `button--${size}`, mode].join(' ')}
       {...props}
     >
       {label}
-    </button>
+    </motion.button>
   );
 };
 
 Button.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
   primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
   backgroundColor: PropTypes.string,
-  /**
-   * How large should the button be?
-   */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Button contents
-   */
   label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
   onClick: PropTypes.func,
 };
 
